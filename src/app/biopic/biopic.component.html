@@ -1,0 +1,43 @@
+<label for="inputText" class="form-label">Movie Name</label>
+<input type="text" id="inputText" class="form-control" aria-describedby="textHelpBlock" [(ngModel)]="movieName">
+<div id="textHelpBlock" class="form-text">
+</div>
+
+<label for="inputTextA" class="form-label">Actor Name</label>
+<input type="text" id="inputTextA" class="form-control" aria-describedby="textHelpBlock" [(ngModel)]="actorName">
+<div id="textHelpBlock" class="form-text">
+</div>
+
+<label for="inputNumeric" class="form-label">Release Year</label>
+<input type="number" id="inputNumeric" class="form-control" aria-describedby="numericHelpBlock" min="1800" max="2021"
+    [(ngModel)]="movieYear">
+<div id="numericHelpBlock" class="form-number">
+</div>
+<div class="d-grid gap-2" style="padding: 10px;">
+    <button class="btn btn-primary" type="button" (click)="onAddClick()">Add</button>
+</div>
+
+<div class="card" style="margin: 10px;">
+    <div class="card-body" *ngFor="let movie of movieList; let i=index">
+
+
+        <div class="card-header container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <h5 class="w-75 p-3"><b>Movie Name : </b>{{movie.movieName}}</h5>
+                    <h5 class="w-75 p-3"><b>Actor Name : </b>{{movie.actorName}}</h5>
+                    <h5 class="w-75 p-3"><b>Movie Year : </b>{{movie.movieYear}}</h5>
+                </div>
+                <div class="col-md-2 float-right" (click)="onDeleteClick(i)">
+                    <svg style=" float: right;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0
+                                1-1 
+                                0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z">
+                        <path fill-rule="evenodd"
+                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+
+                    </svg>
+                </div>
+
+            </div>
+        </div>
